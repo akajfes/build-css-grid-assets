@@ -1,0 +1,16 @@
+@use 'sizing';
+
+section {
+    margin-bottom: 3.375rem;
+}
+
+.popular-posts {
+    article {
+        border: 1px solid #dedede;
+        border-radius: 4px;
+        margin-bottom: sizing.$baseline;
+        div {
+            padding: sizing.$baseline;
+        }
+    }
+}

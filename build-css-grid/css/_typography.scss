@@ -1,0 +1,17 @@
+@use 'colors';
+@use 'sizing';
+
+h1{
+    font-size: 2rem;
+    //for the baseline grid, add a line-height that is either 27px or a multiplier of 27px
+    //it must be larger than the font size 
+    line-height: 3.375rem;
+    a {
+        color: colors.$black;
+        text-decoration: none;
+    }
+}
+
+p {
+    margin-bottom: sizing.$baseline;
+}

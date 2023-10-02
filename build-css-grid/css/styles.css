@@ -1,32 +1,190 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default padding */
+ul[class],
+ol[class] {
+  padding: 0;
+  list-style-type: none;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Set core body defaults */
 body {
-    font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Natural flow and rhythm in articles by default */
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+header,
+main,
+footer {
+  padding: 1rem;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.125rem;
+  color: #323232;
 }
 
 .flex-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
 }
 
-button {
-    background-color: white;
-    border: none;
-    cursor: pointer;
+h1 {
+  font-size: 2rem;
+  line-height: 3.375rem;
+}
+h1 a {
+  color: #323232;
+  text-decoration: none;
+}
+
+p {
+  margin-bottom: 1.6875rem;
+}
+
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #dedede;
+  box-shadow: 0 0 8px #dedede;
+}
+header button {
+  padding: 0.75rem;
+  background-color: white;
+  border: none;
+  cursor: pointer;
 }
 
 nav {
-    flex: 0 0 100%;
-    text-align: right;
-    display: none;
+  flex: 0 0 100%;
+  text-align: right;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.9s ease-in-out;
+}
+nav.show-nav {
+  max-height: 265px;
 }
 
 .menu li {
-    line-height: 3.5rem;
-    margin-bottom: 0.75rem; /* to ensure that users dont accidently click other ones */
+  line-height: 3.5rem;
+  margin-bottom: 0.75rem; /* to ensure that users dont accidently click other ones */
 }
 
 .menu li a {
-    display: block;
-    padding-right: 1rem;
+  display: block;
+  padding-right: 1rem;
 }
+
+button {
+  background-color: white;
+  border: none;
+  cursor: pointer;
+}
+
+section {
+  margin-bottom: 3.375rem;
+}
+
+.popular-posts article {
+  border: 1px solid #dedede;
+  border-radius: 4px;
+  margin-bottom: 1.6875rem;
+}
+.popular-posts article div {
+  padding: 1.6875rem;
+}
+
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.6875rem;
+  border-top: 1px solid #dedede;
+  justify-content: space-between;
+}
+footer .col {
+  flex: 1;
+}
+footer .col:last-of-type,
+footer .col:first-of-type {
+  flex: 1 1 100%;
+}
+footer input {
+  line-height: 2.5rem;
+  padding-left: 0.75rem;
+  width: 100%;
+}/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,24 @@
+@use 'sizing';
+
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: sizing.$baseline;
+    border-top: 1px solid #dedede;
+    justify-content: space-between;
+
+    .col {
+        flex: 1;
+    }
+
+    .col:last-of-type,
+    .col:first-of-type{
+        flex: 1 1 100%;
+    }
+
+    input {
+        line-height: 2.5rem;
+        padding-left: 0.75rem;
+        width: 100%;
+    }
+}
