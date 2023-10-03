@@ -1,4 +1,4 @@
-@use 'sizing';
+@use 'sizing' as *;
 
 section {
     margin-bottom: 3.375rem;
@@ -8,9 +8,45 @@ section {
     article {
         border: 1px solid #dedede;
         border-radius: 4px;
-        margin-bottom: sizing.$baseline;
+        margin-bottom: $baseline;
         div {
-            padding: sizing.$baseline;
+            padding: $baseline;
         }
+    }
+}
+
+@media screen and (min-width: 740px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        align-items: start;
+        gap: $baseline;
+    }
+
+    .recent-posts {
+        grid-column: 1 / span 6;
+    }
+
+    .popular-posts {
+        grid-column: 7 / span 6;
+    }
+}
+
+@media screen and (min-width: 975px) {
+    .recent-posts {
+        grid-column: 1 / span 8;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: $baseline;
+
+        h2,
+        article:first-of-type {
+            grid-column: 1 / -1;
+        }
+
+    }
+
+    .popular-posts {
+        grid-column: 9 / span 4;
     }
 }

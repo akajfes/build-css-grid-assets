@@ -101,6 +101,12 @@ body {
   align-items: center;
 }
 
+.inner-container,
+.grid-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 h1 {
   font-size: 2rem;
   line-height: 3.375rem;
@@ -115,12 +121,14 @@ p {
 }
 
 header {
+  border-bottom: 1px solid #dedede;
+  box-shadow: 0 0 8px #dedede;
+}
+header .inner-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #dedede;
-  box-shadow: 0 0 8px #dedede;
 }
 header button {
   padding: 0.75rem;
@@ -150,12 +158,38 @@ nav.show-nav {
   padding-right: 1rem;
 }
 
+.menu li a:hover {
+  font-weight: bold;
+}
+
 button {
   background-color: white;
   border: none;
   cursor: pointer;
 }
 
+@media screen and (min-width: 600px) {
+  .toggle-btn {
+    display: none;
+  }
+  nav {
+    flex: 0 1 auto;
+    text-align: right;
+    max-height: unset;
+  }
+  nav .menu {
+    display: flex;
+    gap: 1rem;
+  }
+  nav .menu li {
+    margin-bottom: 0;
+  }
+  nav .menu li a {
+    padding-left: 1rem;
+    text-decoration: none;
+    color: #323232;
+  }
+}
 section {
   margin-bottom: 3.375rem;
 }
@@ -169,11 +203,42 @@ section {
   padding: 1.6875rem;
 }
 
+@media screen and (min-width: 740px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    align-items: start;
+    gap: 1.6875rem;
+  }
+  .recent-posts {
+    grid-column: 1/span 6;
+  }
+  .popular-posts {
+    grid-column: 7/span 6;
+  }
+}
+@media screen and (min-width: 975px) {
+  .recent-posts {
+    grid-column: 1/span 8;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.6875rem;
+  }
+  .recent-posts h2,
+  .recent-posts article:first-of-type {
+    grid-column: 1/-1;
+  }
+  .popular-posts {
+    grid-column: 9/span 4;
+  }
+}
 footer {
+  border-top: 1px solid #dedede;
+}
+footer .inner-container {
   display: flex;
   flex-wrap: wrap;
   gap: 1.6875rem;
-  border-top: 1px solid #dedede;
   justify-content: space-between;
 }
 footer .col {
