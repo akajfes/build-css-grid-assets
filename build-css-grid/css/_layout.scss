@@ -32,7 +32,7 @@ section {
     }
 }
 
-@media screen and (min-width: 975px) {
+@media screen and (min-width: $med) {
     .recent-posts {
         grid-column: 1 / span 8;
         display: grid;
@@ -50,3 +50,15 @@ section {
         grid-column: 9 / span 4;
     }
 }
+
+// @media screen and (min-width: $lrg) {
+//     .popular-posts {
+//         article {
+//             display: flex;
+//             gap: 1rem;
+//         }
+//         article img {
+//             flex: 1
+//         }
+//     }
+// }

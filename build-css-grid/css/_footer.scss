@@ -1,10 +1,10 @@
-@use 'sizing';
+@use 'sizing' as *;
 
 footer {
     .inner-container {
         display: flex;
         flex-wrap: wrap;
-        gap: sizing.$baseline;
+        gap: $baseline;
         justify-content: space-between;
     }
     
@@ -23,5 +23,13 @@ footer {
         line-height: 2.5rem;
         padding-left: 0.75rem;
         width: 100%;
+    }
+}
+
+@media screen and (min-width: $small) {
+    footer {
+        .col:last-of-type{
+            flex: 1;
+        }
     }
 }

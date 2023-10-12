@@ -252,4 +252,10 @@ footer input {
   line-height: 2.5rem;
   padding-left: 0.75rem;
   width: 100%;
+}
+
+@media screen and (min-width: 700px) {
+  footer .col:last-of-type {
+    flex: 1;
+  }
 }/*# sourceMappingURL=styles.css.map */
